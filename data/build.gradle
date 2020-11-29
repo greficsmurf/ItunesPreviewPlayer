@@ -1,0 +1,29 @@
+plugins {
+    id 'java-library'
+    id 'kotlin'
+    id 'kotlin-kapt'
+
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+dependencies {
+    implementation project(':domain')
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+
+    implementation 'com.google.dagger:dagger:2.30.1'
+    kapt 'com.google.dagger:dagger-compiler:2.30.1'
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines"
+    //retrofit
+    implementation  "com.squareup.retrofit2:retrofit:$retrofit"
+    implementation  "com.squareup.moshi:moshi:$moshi"
+    implementation  "com.squareup.retrofit2:converter-moshi:$moshi_converter"
+    implementation  "com.squareup.moshi:moshi-kotlin:1.9.3"
+    kapt "com.squareup.moshi:moshi-kotlin-codegen:$moshi"
+
+}

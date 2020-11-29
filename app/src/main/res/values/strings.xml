@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">UItunes</string>
+    <string name="title_albums_fragment_nav">Albums</string>
+    <string name="title_songs_fragment_nav">Songs</string>
+    <string name="title_player_fragment_nav">Player</string>
+
+    <string name="title_albums_fragment_template">Albums for %s</string>
+    <string name="title_songs_fragment_template">Songs for %s</string>
+    <string name="songs_count_template">%d songs</string>
+
+    <string name="search_bar_init_error">Search is broken</string>
+    <string name="search_hint">Enter song or album</string>
+
+    <string name="albums_section_title">Albums</string>
+    <string name="songs_section_title">Songs</string>
+    <string name="artists_section_title">Artists</string>
+
+    <string name="playback_error">Sorry, something went wrong</string>
+    <string name="notification_player_title">Player</string>
+</resources>

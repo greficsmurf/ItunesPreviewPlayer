@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <data>
+        <import type="com.example.domain.resource.Resource"/>
+        <variable
+            name="viewModel"
+            type="com.example.itunesapiapptest.ui.home.HomeViewModel" />
+    </data>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include
+                android:id="@+id/include_toolbar_home"
+                layout="@layout/include_toolbar_home"/>
+
+            <include
+                app:resource="@{(Resource) viewModel.searchResource}"
+                layout="@layout/include_progress_bar"/>
+
+            <TextView
+                android:isVisible="@{false}"
+                style="@style/Theme.ItunesApiAppTest.SectionTitleTextViewClickable"
+                android:background="?attr/selectableItemBackground"
+                android:id="@+id/albums_section_title"
+                android:text="@string/albums_section_title"
+                app:drawableEndCompat="@drawable/ic_navigate_next_24px"
+                android:onClick="@{() -> viewModel.onAllAlbumsClicked()}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:overScrollMode="never"
+                android:id="@+id/albums_list"
+                android:layout_width="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:isVisible="@{false}"
+                style="@style/Theme.ItunesApiAppTest.SectionTitleTextViewClickable"
+                android:background="?attr/selectableItemBackground"
+                android:id="@+id/songs_section_title"
+                android:text="@string/songs_section_title"
+                android:onClick="@{() -> viewModel.onAllSongsClicked()}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:drawableEndCompat="@drawable/ic_navigate_next_24px" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:overScrollMode="never"
+                android:id="@+id/songs_list"
+                android:layout_width="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:isVisible="@{false}"
+                style="@style/Theme.ItunesApiAppTest.SectionTitleTextViewClickable"
+                android:id="@+id/artists_section_title"
+                android:text="@string/artists_section_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:overScrollMode="never"
+                android:id="@+id/artists_list"
+                android:layout_width="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

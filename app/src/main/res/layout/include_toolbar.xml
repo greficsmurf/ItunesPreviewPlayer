@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="com.example.domain.resource.Resource"/>
+        <variable
+            name="resource"
+            type="Resource" />
+    </data>
+    <com.google.android.material.appbar.AppBarLayout
+        android:fitsSystemWindows="true"
+        android:layout_width="match_parent"
+        android:divider="?android:dividerHorizontal"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_scrollFlags="scroll|snap|enterAlways"
+            app:title="Fragment"
+            app:titleMargin="4dp" />
+
+        <include
+            app:resource="@{resource}"
+            layout="@layout/include_progress_bar"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+</layout>

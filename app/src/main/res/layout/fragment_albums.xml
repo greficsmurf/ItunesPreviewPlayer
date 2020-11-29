@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <import type="com.example.domain.resource.Resource"/>
+        <variable
+            name="viewModel"
+            type="com.example.itunesapiapptest.ui.albums.AlbumsViewModel" />
+    </data>
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+         android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <include
+            android:id="@+id/include_toolbar"
+            app:resource="@{(Resource) viewModel.albumsResource}"
+            layout="@layout/include_toolbar"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:layout_height="wrap_content"/>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

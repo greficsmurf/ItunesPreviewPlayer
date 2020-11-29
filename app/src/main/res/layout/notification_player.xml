@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:text="Song"
+        android:maxLength="16"
+        android:ellipsize="end"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:id="@+id/song_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        tools:text="Song title" />
+
+    <TextView
+        android:text="Artist"
+        android:maxLength="16"
+        android:ellipsize="end"
+        style="?attr/descStyle"
+        android:textSize="14sp"
+        android:layout_marginBottom="8dp"
+        android:id="@+id/song_artist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginStart="8dp"
+        android:layout_below="@id/song_title"
+        tools:text="Artist" />
+
+    <Button
+        android:layout_centerVertical="true"
+        android:id="@+id/prev_button"
+        android:layout_width="@dimen/notification_btn_width"
+        android:layout_height="@dimen/notification_btn_height"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/ic_skip_previous_24px_notification"
+        android:layout_toStartOf="@id/play_stop_button"/>
+
+    <Button
+        android:id="@+id/play_stop_button"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@id/next_button"
+        android:layout_width="@dimen/notification_btn_width"
+        android:layout_height="@dimen/notification_btn_height"
+        android:background="@drawable/ic_play_arrow_24px__1__notification" />
+
+    <Button
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@id/dismiss_button"
+        android:layout_marginEnd="8dp"
+        android:id="@+id/next_button"
+        android:layout_width="@dimen/notification_btn_width"
+        android:layout_height="@dimen/notification_btn_height"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/drawable_next_btn_notification" />
+
+    <Button
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="8dp"
+        android:id="@+id/dismiss_button"
+        android:layout_width="@dimen/notification_btn_width"
+        android:layout_height="@dimen/notification_btn_height"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/ic_clear_24px_notification" />
+</RelativeLayout>

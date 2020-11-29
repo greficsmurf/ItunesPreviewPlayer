@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="toolbarTextColor" format="reference"/>
+
+    <attr name="iconColor" format="reference"/>
+
+    <style name="Theme.ItunesApiAppTest.TextViewPadding" parent="Theme.ItunesApiAppTest.TextView">
+        <item name="android:padding">16dp</item>
+    </style>
+    <style name="Theme.ItunesApiAppTest.TextViewDesc" parent="Theme.ItunesApiAppTest.TextViewPadding">
+        <item name="color">@color/teal_700</item>
+    </style>
+    <style name="Theme.ItunesApiAppTest.SectionTitleTextView" parent="Theme.ItunesApiAppTest.TextViewPadding">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="Theme.ItunesApiAppTest.SectionTitleTextViewClickable" parent="Theme.ItunesApiAppTest.SectionTitleTextView">
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+
+    <attr name="titleStyle" format="reference"/>
+    <attr name="descStyle" format="reference"/>
+    <attr name="playbackBtnStyle" format="reference"/>
+
+</resources>

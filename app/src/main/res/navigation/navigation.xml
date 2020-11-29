@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.itunesapiapptest.ui.home.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_albumsFragment"
+            app:destination="@id/albumsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_songsFragment"
+            app:destination="@id/songsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_playerFragment"
+            app:destination="@id/playerFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_albumFragment"
+            app:destination="@id/albumFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/albumsFragment"
+        android:name="com.example.itunesapiapptest.ui.albums.AlbumsFragment"
+        android:label="@string/title_albums_fragment_nav"
+        tools:layout="@layout/fragment_albums">
+        <argument
+            android:name="searchTerm"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_albumsFragment_to_albumFragment"
+            app:destination="@id/albumFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/songsFragment"
+        android:name="com.example.itunesapiapptest.ui.songs.SongsFragment"
+        android:label="@string/title_songs_fragment_nav"
+        tools:layout="@layout/fragment_songs">
+        <argument
+            android:name="albumId"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="searchTerm"
+            app:argType="string"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_songsFragment_to_playerFragment"
+            app:destination="@id/playerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/playerFragment"
+        android:name="com.example.itunesapiapptest.ui.player.PlayerFragment"
+        android:label="@string/title_player_fragment_nav"
+        tools:layout="@layout/fragment_player">
+        <argument
+            android:name="songId"
+            app:argType="string" />
+        <argument
+            android:name="albumId"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/albumFragment"
+        android:name="com.example.itunesapiapptest.ui.album.AlbumFragment"
+        tools:layout="@layout/fragment_album">
+        <argument
+            android:name="albumId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_albumFragment_to_playerFragment"
+            app:destination="@id/playerFragment" />
+    </fragment>
+</navigation>

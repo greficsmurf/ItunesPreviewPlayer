@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="com.example.domain.resource.Resource"/>
+
+        <variable
+            name="viewModel"
+            type="com.example.itunesapiapptest.ui.player.PlayerViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            app:resource="@{(Resource) viewModel.playerResource}"
+            android:id="@+id/include_toolbar"
+            layout="@layout/include_toolbar" />
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/cover_image"
+            android:layout_width="@dimen/song_cover_image_land_width"
+            android:layout_height="@dimen/song_cover_image_land_height"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/include_toolbar" />
+
+        <SeekBar
+            android:id="@+id/seek_bar"
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="56dp"
+            app:layout_constraintBottom_toTopOf="@+id/play_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/play_button"
+            android:layout_width="@dimen/default_player_btn_width"
+            android:layout_height="@dimen/default_player_btn_height"
+            android:layout_marginBottom="36dp"
+            android:enabled="@{viewModel.isPrepared}"
+            android:playStopDrawable="@{viewModel.isPlaying}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/next_button"
+            android:layout_width="@dimen/default_player_btn_width"
+            android:layout_height="@dimen/default_player_btn_height"
+            android:layout_marginStart="24dp"
+            android:layout_marginBottom="36dp"
+            android:background="@drawable/drawable_next_btn"
+            android:enabled="@{viewModel.isPrepared &amp; !viewModel.isRightEnd()}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/play_button" />
+
+        <Button
+            android:id="@+id/prev_button"
+            android:layout_width="@dimen/default_player_btn_width"
+            android:layout_height="@dimen/default_player_btn_height"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="36dp"
+            android:background="@drawable/drawable_prev_btn"
+            android:enabled="@{viewModel.isPrepared &amp; !viewModel.isLeftEnd()}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/play_button" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,52 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.ItunesApiAppTest" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+        <item name="progressIndicatorStyle">@style/Theme.ItunesApiAppTest.ProgressIndicator</item>
+        <item name="toolbarStyle">@style/Theme.ItunesApiAppTest.Toolbar</item>
+        <item name="android:textViewStyle">@style/Theme.ItunesApiAppTest.TextView</item>
+        <item name="iconColor">@color/teal_700</item>
+
+        <item name="titleStyle">@style/Theme.ItunesApiAppTest.TitleStyle</item>
+        <item name="descStyle">@style/Theme.ItunesApiAppTest.DescStyle</item>
+        <item name="playbackBtnStyle">@style/Theme.ItunesApiAppTest.PlaybackBtnStyle</item>
+    </style>
+    
+    <style name="Theme.ItunesApiAppTest.Toolbar" parent="Widget.MaterialComponents.Toolbar">
+        <item name="titleTextColor">@color/white</item>
+        <item name="titleTextStyle">@style/Theme.ItunesApiAppTest.TextViewToolbar</item>
+    </style>
+
+    <style name="Theme.ItunesApiAppTest.TextView" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Theme.ItunesApiAppTest.TextViewToolbar" parent="TextAppearance.MaterialComponents.Headline5">
+    </style>
+
+    <style name="Theme.ItunesApiAppTest.ProgressIndicator" parent="Widget.MaterialComponents.ProgressIndicator.Linear.Indeterminate">
+        <item name="indicatorColor">@color/purple_500</item>
+    </style>
+
+    <style name="Theme.ItunesApiAppTest.TitleStyle" parent="Theme.ItunesApiAppTest.TextView">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="Theme.ItunesApiAppTest.DescStyle" parent="Theme.ItunesApiAppTest.TextView">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/teal_700</item>
+    </style>
+    <style name="Theme.ItunesApiAppTest.PlaybackBtnStyle">
+        <item name="backgroundColor">@color/teal_700</item>
+    </style>
+</resources>
